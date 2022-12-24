@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFFEC622-3802-45D0-9847-1DE94FADA4D2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2</RootNamespace>
+    <AssemblyName>WebApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Auth.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auth.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Auth.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auth.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Auth.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auth.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Auth.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\all.min.css" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\Flaticon.svg" />
+    <Content Include="assets\css\images\about\about.png" />
+    <Content Include="assets\css\images\about\about01.png" />
+    <Content Include="assets\css\images\about\about02.png" />
+    <Content Include="assets\css\images\about\about03.png" />
+    <Content Include="assets\css\images\about\ceo-bg.jpg" />
+    <Content Include="assets\css\images\about\certificate-ceo.png" />
+    <Content Include="assets\css\images\about\hero-bg.png" />
+    <Content Include="assets\css\images\about\hero-bg2.jpg" />
+    <Content Include="assets\css\images\about\hero-bg3.jpg" />
+    <Content Include="assets\css\images\about\hero-bg4.png" />
+    <Content Include="assets\css\images\about\hero-bg5.png" />
+    <Content Include="assets\css\images\about\hero-shape1.png" />
+    <Content Include="assets\css\images\about\sign-ceo.png" />
+    <Content Include="assets\css\images\account-bg.jpg" />
+    <Content Include="assets\css\images\affiliate\affiliate-bg.png" />
+    <Content Include="assets\css\images\affiliate\affiliate-bg2.png" />
+    <Content Include="assets\css\images\affiliate\affiliate.png" />
+    <Content Include="assets\css\images\affiliate\tot1.png" />
+    <Content Include="assets\css\images\affiliate\tot3.png" />
+    <Content Include="assets\css\images\affiliate\total-1.png" />
+    <Content Include="assets\css\images\balls\ball-group1.png" />
+    <Content Include="assets\css\images\balls\ball-group10.png" />
+    <Content Include="assets\css\images\balls\ball-group2.png" />
+    <Content Include="assets\css\images\balls\ball-group3.png" />
+    <Content Include="assets\css\images\balls\ball-group4.png" />
+    <Content Include="assets\css\images\balls\ball-group5.png" />
+    <Content Include="assets\css\images\balls\ball-group6.png" />
+    <Content Include="assets\css\images\balls\ball-group7.png" />
+    <Content Include="assets\css\images\balls\ball-group8.png" />
+    <Content Include="assets\css\images\balls\ball-group9.png" />
+    <Content Include="assets\css\images\balls\ball1.png" />
+    <Content Include="assets\css\images\balls\ball2.png" />
+    <Content Include="assets\css\images\balls\ball3.png" />
+    <Content Include="assets\css\images\balls\ball4.png" />
+    <Content Include="assets\css\images\banner\banner-bg2.jpg" />
+    <Content Include="assets\css\images\banner\banner.jpg" />
+    <Content Include="assets\css\images\banner\chart1.png" />
+    <Content Include="assets\css\images\banner\chart2.png" />
+    <Content Include="assets\css\images\banner\chart3.png" />
+    <Content Include="assets\css\images\banner\clock.png" />
+    <Content Include="assets\css\images\banner\coin1.png" />
+    <Content Include="assets\css\images\banner\coin2.png" />
+    <Content Include="assets\css\images\banner\coin3.png" />
+    <Content Include="assets\css\images\banner\coin4.png" />
+    <Content Include="assets\css\images\banner\coin5.png" />
+    <Content Include="assets\css\images\banner\coin6.png" />
+    <Content Include="assets\css\images\banner\coin7.png" />
+    <Content Include="assets\css\images\banner\light.png" />
+    <Content Include="assets\css\images\banner\plot.png" />
+    <Content Include="assets\css\images\banner\sheild.png" />
+    <Content Include="assets\css\images\call\call-bg.jpg" />
+    <Content Include="assets\css\images\call\icon01.png" />
+    <Content Include="assets\css\images\call\icon02.png" />
+    <Content Include="assets\css\images\client\client-bg.png" />
+    <Content Include="assets\css\images\client\client01.png" />
+    <Content Include="assets\css\images\client\client02.png" />
+    <Content Include="assets\css\images\client\client03.png" />
+    <Content Include="assets\css\images\counter\counter01.png" />
+    <Content Include="assets\css\images\counter\counter02.png" />
+    <Content Include="assets\css\images\counter\counter03.png" />
+    <Content Include="assets\css\images\dashboard\author.png" />
+    <Content Include="assets\css\images\dashboard\dashboard1.png" />
+    <Content Include="assets\css\images\dashboard\dashboard2.png" />
+    <Content Include="assets\css\images\dashboard\dashboard3.png" />
+    <Content Include="assets\css\images\dashboard\dashboard4.png" />
+    <Content Include="assets\css\images\dashboard\earn\01.png" />
+    <Content Include="assets\css\images\dashboard\earn\02.png" />
+    <Content Include="assets\css\images\dashboard\earn\03.png" />
+    <Content Include="assets\css\images\dashboard\earn\04.png" />
+    <Content Include="assets\css\images\dashboard\earn\05.png" />
+    <Content Include="assets\css\images\dashboard\earn\06.png" />
+    <Content Include="assets\css\images\dashboard\earn\07.png" />
+    <Content Include="assets\css\images\dashboard\earn\08.png" />
+    <Content Include="assets\css\images\dashboard\earn\active.png" />
+    <Content Include="assets\css\images\dashboard\earn\btc.png" />
+    <Content Include="assets\css\images\dashboard\earn\btc2.png" />
+    <Content Include="assets\css\images\dashboard\earn\dash2.png" />
+    <Content Include="assets\css\images\dashboard\earn\eth.png" />
+    <Content Include="assets\css\images\dashboard\earn\eth2.png" />
+    <Content Include="assets\css\images\dashboard\earn\eth3.png" />
+    <Content Include="assets\css\images\dashboard\earn\inactive.png" />
+    <Content Include="assets\css\images\dashboard\earn\usd.png" />
+    <Content Include="assets\css\images\dashboard\earn\xrp.png" />
+    <Content Include="assets\css\images\dashboard\graph1.png" />
+    <Content Include="assets\css\images\dashboard\graph2.png" />
+    <Content Include="assets\css\images\dashboard\payment\01.png" />
+    <Content Include="assets\css\images\dashboard\payment\02.png" />
+    <Content Include="assets\css\images\dashboard\payment\03.png" />
+    <Content Include="assets\css\images\dashboard\payment\04.png" />
+    <Content Include="assets\css\images\dashboard\payment\05.png" />
+    <Content Include="assets\css\images\dashboard\payment\06.png" />
+    <Content Include="assets\css\images\dashboard\payment\07.png" />
+    <Content Include="assets\css\images\dashboard\payment\check.png" />
+    <Content Include="assets\css\images\dashboard\promotional\1.png" />
+    <Content Include="assets\css\images\dashboard\promotional\2.png" />
+    <Content Include="assets\css\images\dashboard\promotional\3.png" />
+    <Content Include="assets\css\images\dashboard\promotional\4.png" />
+    <Content Include="assets\css\images\dashboard\ticket.png" />
+    <Content Include="assets\css\images\dashboard\user.png" />
+    <Content Include="assets\css\images\favicon.png" />
+    <Content Include="assets\css\images\feature\feature-bg.png" />
+    <Content Include="assets\css\images\feature\feature01.png" />
+    <Content Include="assets\css\images\feature\feature02.png" />
+    <Content Include="assets\css\images\feature\feature03.png" />
+    <Content Include="assets\css\images\footer\Coin_01.png" />
+    <Content Include="assets\css\images\footer\Coin_02.png" />
+    <Content Include="assets\css\images\footer\Coin_03.png" />
+    <Content Include="assets\css\images\footer\Coin_04.png" />
+    <Content Include="assets\css\images\footer\Coin_05.png" />
+    <Content Include="assets\css\images\footer\Coin_06.png" />
+    <Content Include="assets\css\images\footer\footer.png" />
+    <Content Include="assets\css\images\how\how01.png" />
+    <Content Include="assets\css\images\how\how02.png" />
+    <Content Include="assets\css\images\how\how03.png" />
+    <Content Include="assets\css\images\how\how4.png" />
+    <Content Include="assets\css\images\how\how5.png" />
+    <Content Include="assets\css\images\how\how6.png" />
+    <Content Include="assets\css\images\icon\google.png" />
+    <Content Include="assets\css\images\investor\investor1.png" />
+    <Content Include="assets\css\images\investor\investor2.png" />
+    <Content Include="assets\css\images\investor\investor3.png" />
+    <Content Include="assets\css\images\investor\investor4.png" />
+    <Content Include="assets\css\images\logo\footer-logo.png" />
+    <Content Include="assets\css\images\logo\logo.png" />
+    <Content Include="assets\css\images\logo\logo2.png" />
+    <Content Include="assets\css\images\mission\1.png" />
+    <Content Include="assets\css\images\mission\2.png" />
+    <Content Include="assets\css\images\mission\3.png" />
+    <Content Include="assets\css\images\mission\4.png" />
+    <Content Include="assets\css\images\mission\mission-shape.png" />
+    <Content Include="assets\css\images\mission\mission.png" />
+    <Content Include="assets\css\images\offer\offer1.png" />
+    <Content Include="assets\css\images\offer\offer2.png" />
+    <Content Include="assets\css\images\profit\coin1.png" />
+    <Content Include="assets\css\images\profit\coin2.png" />
+    <Content Include="assets\css\images\profit\coin3.png" />
+    <Content Include="assets\css\images\profit\coin4.png" />
+    <Content Include="assets\css\images\profit\coin5.png" />
+    <Content Include="assets\css\images\profit\coin6.png" />
+    <Content Include="assets\css\images\profit\light.png" />
+    <Content Include="assets\css\images\profit\platform.png" />
+    <Content Include="assets\css\images\profit\profit-bg.png" />
+    <Content Include="assets\css\images\sponsor\sponsor1.html" />
+    <Content Include="assets\css\images\sponsor\sponsor2.html" />
+    <Content Include="assets\css\images\sponsor\sponsor3.html" />
+    <Content Include="assets\css\images\sponsor\sponsor4.html" />
+    <Content Include="assets\css\images\sponsor\sponsor5.html" />
+    <Content Include="assets\css\images\sponsor\sponsor6.html" />
+    <Content Include="assets\css\images\sponsor\sponsor7.html" />
+    <Content Include="assets\css\images\transaction\transaction-bg.png" />
+    <Content Include="assets\css\images\transaction\transaction01.png" />
+    <Content Include="assets\css\images\transaction\transaction02.png" />
+    <Content Include="assets\css\images\transaction\transaction03.png" />
+    <Content Include="assets\css\images\transaction\transaction04.png" />
+    <Content Include="assets\css\images\transaction\transaction05.png" />
+    <Content Include="assets\css\images\transaction\transaction06.png" />
+    <Content Include="assets\css\images\transaction\transaction07.png" />
+    <Content Include="assets\css\images\transaction\transaction08.png" />
+    <Content Include="assets\css\images\why\how.png" />
+    <Content Include="assets\css\images\why\why1.png" />
+    <Content Include="assets\css\images\why\why2.png" />
+    <Content Include="assets\css\images\why\why3.png" />
+    <Content Include="assets\css\images\why\why4.png" />
+    <Content Include="assets\css\img\dashboard-bg.jpg" />
+    <Content Include="assets\css\img\faq.png" />
+    <Content Include="assets\css\img\footer-shape.png" />
+    <Content Include="assets\css\img\how-shape-md.png" />
+    <Content Include="assets\css\img\how-shape-sm.png" />
+    <Content Include="assets\css\img\map.png" />
+    <Content Include="assets\css\img\offer-shape.png" />
+    <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\nice-select.css" />
+    <Content Include="assets\css\odometer.css" />
+    <Content Include="assets\css\owl.min.css" />
+    <Content Include="assets\css\owl.video.play.html" />
+    <Content Include="assets\images\about\about.png" />
+    <Content Include="assets\images\about\about01.png" />
+    <Content Include="assets\images\about\about02.png" />
+    <Content Include="assets\images\about\about03.png" />
+    <Content Include="assets\images\about\ceo-bg.jpg" />
+    <Content Include="assets\images\about\certificate-ceo.png" />
+    <Content Include="assets\images\about\hero-bg.png" />
+    <Content Include="assets\images\about\hero-bg2.jpg" />
+    <Content Include="assets\images\about\hero-bg3.jpg" />
+    <Content Include="assets\images\about\hero-bg4.png" />
+    <Content Include="assets\images\about\hero-bg5.png" />
+    <Content Include="assets\images\about\hero-shape1.png" />
+    <Content Include="assets\images\about\sign-ceo.png" />
+    <Content Include="assets\images\account-bg.jpg" />
+    <Content Include="assets\images\affiliate\affiliate-bg.png" />
+    <Content Include="assets\images\affiliate\affiliate-bg2.png" />
+    <Content Include="assets\images\affiliate\affiliate.png" />
+    <Content Include="assets\images\affiliate\tot1.png" />
+    <Content Include="assets\images\affiliate\tot3.png" />
+    <Content Include="assets\images\affiliate\total-1.png" />
+    <Content Include="assets\images\balls\ball-group1.png" />
+    <Content Include="assets\images\balls\ball-group10.png" />
+    <Content Include="assets\images\balls\ball-group2.png" />
+    <Content Include="assets\images\balls\ball-group3.png" />
+    <Content Include="assets\images\balls\ball-group4.png" />
+    <Content Include="assets\images\balls\ball-group5.png" />
+    <Content Include="assets\images\balls\ball-group6.png" />
+    <Content Include="assets\images\balls\ball-group7.png" />
+    <Content Include="assets\images\balls\ball-group8.png" />
+    <Content Include="assets\images\balls\ball-group9.png" />
+    <Content Include="assets\images\balls\ball1.png" />
+    <Content Include="assets\images\balls\ball2.png" />
+    <Content Include="assets\images\balls\ball3.png" />
+    <Content Include="assets\images\balls\ball4.png" />
+    <Content Include="assets\images\banner\banner-bg2.jpg" />
+    <Content Include="assets\images\banner\banner.jpg" />
+    <Content Include="assets\images\banner\chart1.png" />
+    <Content Include="assets\images\banner\chart2.png" />
+    <Content Include="assets\images\banner\chart3.png" />
+    <Content Include="assets\images\banner\clock.png" />
+    <Content Include="assets\images\banner\coin1.png" />
+    <Content Include="assets\images\banner\coin2.png" />
+    <Content Include="assets\images\banner\coin3.png" />
+    <Content Include="assets\images\banner\coin4.png" />
+    <Content Include="assets\images\banner\coin5.png" />
+    <Content Include="assets\images\banner\coin6.png" />
+    <Content Include="assets\images\banner\coin7.png" />
+    <Content Include="assets\images\banner\light.png" />
+    <Content Include="assets\images\banner\plot.png" />
+    <Content Include="assets\images\banner\sheild.png" />
+    <Content Include="assets\images\call\call-bg.jpg" />
+    <Content Include="assets\images\call\icon01.png" />
+    <Content Include="assets\images\call\icon02.png" />
+    <Content Include="assets\images\client\client-bg.png" />
+    <Content Include="assets\images\client\client01.png" />
+    <Content Include="assets\images\client\client02.png" />
+    <Content Include="assets\images\client\client03.png" />
+    <Content Include="assets\images\counter\counter01.png" />
+    <Content Include="assets\images\counter\counter02.png" />
+    <Content Include="assets\images\counter\counter03.png" />
+    <Content Include="assets\images\dashboard\author.png" />
+    <Content Include="assets\images\dashboard\dashboard1.png" />
+    <Content Include="assets\images\dashboard\dashboard2.png" />
+    <Content Include="assets\images\dashboard\dashboard3.png" />
+    <Content Include="assets\images\dashboard\dashboard4.png" />
+    <Content Include="assets\images\dashboard\earn\01.png" />
+    <Content Include="assets\images\dashboard\earn\02.png" />
+    <Content Include="assets\images\dashboard\earn\03.png" />
+    <Content Include="assets\images\dashboard\earn\04.png" />
+    <Content Include="assets\images\dashboard\earn\05.png" />
+    <Content Include="assets\images\dashboard\earn\06.png" />
+    <Content Include="assets\images\dashboard\earn\07.png" />
+    <Content Include="assets\images\dashboard\earn\08.png" />
+    <Content Include="assets\images\dashboard\earn\active.png" />
+    <Content Include="assets\images\dashboard\earn\btc.png" />
+    <Content Include="assets\images\dashboard\earn\btc2.png" />
+    <Content Include="assets\images\dashboard\earn\dash2.png" />
+    <Content Include="assets\images\dashboard\earn\eth.png" />
+    <Content Include="assets\images\dashboard\earn\eth2.png" />
+    <Content Include="assets\images\dashboard\earn\eth3.png" />
+    <Content Include="assets\images\dashboard\earn\inactive.png" />
+    <Content Include="assets\images\dashboard\earn\usd.png" />
+    <Content Include="assets\images\dashboard\earn\xrp.png" />
+    <Content Include="assets\images\dashboard\graph1.png" />
+    <Content Include="assets\images\dashboard\graph2.png" />
+    <Content Include="assets\images\dashboard\payment\01.png" />
+    <Content Include="assets\images\dashboard\payment\02.png" />
+    <Content Include="assets\images\dashboard\payment\03.png" />
+    <Content Include="assets\images\dashboard\payment\04.png" />
+    <Content Include="assets\images\dashboard\payment\05.png" />
+    <Content Include="assets\images\dashboard\payment\06.png" />
+    <Content Include="assets\images\dashboard\payment\07.png" />
+    <Content Include="assets\images\dashboard\payment\check.png" />
+    <Content Include="assets\images\dashboard\promotional\1.png" />
+    <Content Include="assets\images\dashboard\promotional\2.png" />
+    <Content Include="assets\images\dashboard\promotional\3.png" />
+    <Content Include="assets\images\dashboard\promotional\4.png" />
+    <Content Include="assets\images\dashboard\ticket.png" />
+    <Content Include="assets\images\dashboard\user.png" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\feature\feature-bg.png" />
+    <Content Include="assets\images\feature\feature01.png" />
+    <Content Include="assets\images\feature\feature02.png" />
+    <Content Include="assets\images\feature\feature03.png" />
+    <Content Include="assets\images\footer\Coin_01.png" />
+    <Content Include="assets\images\footer\Coin_02.png" />
+    <Content Include="assets\images\footer\Coin_03.png" />
+    <Content Include="assets\images\footer\Coin_04.png" />
+    <Content Include="assets\images\footer\Coin_05.png" />
+    <Content Include="assets\images\footer\Coin_06.png" />
+    <Content Include="assets\images\footer\footer.png" />
+    <Content Include="assets\images\how\how01.png" />
+    <Content Include="assets\images\how\how02.png" />
+    <Content Include="assets\images\how\how03.png" />
+    <Content Include="assets\images\how\how4.png" />
+    <Content Include="assets\images\how\how5.png" />
+    <Content Include="assets\images\how\how6.png" />
+    <Content Include="assets\images\icon\google.png" />
+    <Content Include="assets\images\investor\investor1.png" />
+    <Content Include="assets\images\investor\investor2.png" />
+    <Content Include="assets\images\investor\investor3.png" />
+    <Content Include="assets\images\investor\investor4.png" />
+    <Content Include="assets\images\logo\footer-logo.png" />
+    <Content Include="assets\images\logo\logo.png" />
+    <Content Include="assets\images\logo\logo2.png" />
+    <Content Include="assets\images\mission\1.png" />
+    <Content Include="assets\images\mission\2.png" />
+    <Content Include="assets\images\mission\3.png" />
+    <Content Include="assets\images\mission\4.png" />
+    <Content Include="assets\images\mission\mission-shape.png" />
+    <Content Include="assets\images\mission\mission.png" />
+    <Content Include="assets\images\offer\offer1.png" />
+    <Content Include="assets\images\offer\offer2.png" />
+    <Content Include="assets\images\profit\coin1.png" />
+    <Content Include="assets\images\profit\coin2.png" />
+    <Content Include="assets\images\profit\coin3.png" />
+    <Content Include="assets\images\profit\coin4.png" />
+    <Content Include="assets\images\profit\coin5.png" />
+    <Content Include="assets\images\profit\coin6.png" />
+    <Content Include="assets\images\profit\light.png" />
+    <Content Include="assets\images\profit\platform.png" />
+    <Content Include="assets\images\profit\profit-bg.png" />
+    <Content Include="assets\images\sponsor\sponsor1.html" />
+    <Content Include="assets\images\sponsor\sponsor2.html" />
+    <Content Include="assets\images\sponsor\sponsor3.html" />
+    <Content Include="assets\images\sponsor\sponsor4.html" />
+    <Content Include="assets\images\sponsor\sponsor5.html" />
+    <Content Include="assets\images\sponsor\sponsor6.html" />
+    <Content Include="assets\images\sponsor\sponsor7.html" />
+    <Content Include="assets\images\transaction\transaction-bg.png" />
+    <Content Include="assets\images\transaction\transaction01.png" />
+    <Content Include="assets\images\transaction\transaction02.png" />
+    <Content Include="assets\images\transaction\transaction03.png" />
+    <Content Include="assets\images\transaction\transaction04.png" />
+    <Content Include="assets\images\transaction\transaction05.png" />
+    <Content Include="assets\images\transaction\transaction06.png" />
+    <Content Include="assets\images\transaction\transaction07.png" />
+    <Content Include="assets\images\transaction\transaction08.png" />
+    <Content Include="assets\images\why\how.png" />
+    <Content Include="assets\images\why\why1.png" />
+    <Content Include="assets\images\why\why2.png" />
+    <Content Include="assets\images\why\why3.png" />
+    <Content Include="assets\images\why\why4.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chart.js" />
+    <Content Include="assets\js\circle-progress.js" />
+    <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\jquery-3.3.1.min.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\magnific-popup.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\modernizr-3.6.0.min.js" />
+    <Content Include="assets\js\nice-select.js" />
+    <Content Include="assets\js\odometer.min.js" />
+    <Content Include="assets\js\owl.min.js" />
+    <Content Include="assets\js\paroller.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\viewport.jquery.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="assets\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Auth.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Auth.Context.cs</LastGenOutput>
+      <DependentUpon>Auth.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Auth.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Auth.edmx</DependentUpon>
+      <LastGenOutput>Auth.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Auth.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Auth.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Auth.edmx.diagram">
+      <DependentUpon>Auth.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\css\Flaticon.eot" />
+    <Content Include="assets\css\Flaticon.ttf" />
+    <Content Include="assets\css\Flaticon.woff" />
+    <Content Include="assets\css\Flaticon.woff2" />
+    <Content Include="assets\css\Flaticond41d.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\webfonts\fa-solid-900d41d.eot" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Auth\Signup.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49939</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

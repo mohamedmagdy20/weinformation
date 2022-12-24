@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication2.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-info"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postion)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Employees", new {id=item.id})" class="btn btn-info">Edit</a>
+            <a href="@Url.Action("Details", "Employees", new {id=item.id})" class="btn btn-primary">Details</a>
+            <a href="@Url.Action("Delete", "Employees", new {id=item.id})" class="btn btn-danger">Delete</a>
+
+        </td>
+    </tr>
+}
+
+</table>
